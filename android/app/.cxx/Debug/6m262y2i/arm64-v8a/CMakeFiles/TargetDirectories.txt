@@ -1,0 +1,2 @@
+C:/piz25/Nivas/app_fluxo_livre/android/app/.cxx/Debug/6m262y2i/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/piz25/Nivas/app_fluxo_livre/android/app/.cxx/Debug/6m262y2i/arm64-v8a/CMakeFiles/rebuild_cache.dir

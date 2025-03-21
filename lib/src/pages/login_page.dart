@@ -1,0 +1,64 @@
+import 'package:app_fluxo_livre/src/widget/input_login_widget.dart';
+import 'package:flutter/material.dart';
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/img_fundologin.png'),
+            fit: BoxFit.cover
+        )
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 200,
+              width: 200,
+              child: Image(image: AssetImage('assets/images/et.png')),
+            ),
+            InputLoginWidget(
+              icon: Icons.person_outline, 
+              hint: 'Usuário', 
+              obscure: false
+            ),
+            
+            const SizedBox(height: 20,),
+
+            InputLoginWidget(
+              icon: Icons.password_outlined, 
+              hint: 'Senha', 
+              obscure: true
+            ),
+
+            const SizedBox(height: 50,),
+
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFAFAE24),
+                minimumSize: Size(double.infinity, 60),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                )
+              ),
+              onPressed: (){}, 
+              child: Text('Acessar',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF031C5F),
+                ),
+              )
+            ),
+          ]
+        ),
+      ),
+    );
+  }
+}
