@@ -14,8 +14,10 @@ class InputLoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: TextField(
+        decoration: InputDecoration(
           icon: Icon(icon,
           color: Colors.white,),
           hintText: hint,
@@ -26,6 +28,7 @@ class InputLoginWidget extends StatelessWidget {
           ),
           style: TextStyle(color: Colors.white),
           obscureText: obscure,
-        );
+        ),
+      );
   }
 }
