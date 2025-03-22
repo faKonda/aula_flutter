@@ -1,3 +1,4 @@
+import 'package:app_fluxo_livre/src/pages/cadastro_page.dart';
 import 'package:app_fluxo_livre/src/pages/home_page.dart';
 import 'package:app_fluxo_livre/src/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class AppFluxolivre extends StatelessWidget {
       routes: {
         '/':(_)=>LoginPage(),
         '/home':(_)=>HomePage(),
+        '/cadastro':(_)=>CadastroPage(),
       },
     );
   }

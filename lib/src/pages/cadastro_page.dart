@@ -1,55 +1,50 @@
-import 'package:app_fluxo_livre/src/pages/cadastro_page.dart';
 import 'package:app_fluxo_livre/src/pages/home_page.dart';
+import 'package:app_fluxo_livre/src/pages/login_page.dart';
 import 'package:app_fluxo_livre/src/widget/input_login_widget.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class CadastroPage extends StatefulWidget {
+  const CadastroPage({super.key});
 
+  @override
+  State<CadastroPage> createState() => _CadastroPageState();
+  }
+
+class _CadastroPageState extends State<CadastroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/img_fundologin.png'),
             fit: BoxFit.cover
-        )
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 150,
-              width: 150,
-              child: Image(image: AssetImage('assets/images/et.png')),
-            ),
-            InputLoginWidget(
-              icon: Icons.person_outline, 
-              hint: 'Usuário', 
-              obscure: false
-            ),
-            
-            const SizedBox(height: 10,),
 
-            InputLoginWidget(
-              icon: Icons.password_outlined, 
-              hint: 'Senha', 
-              obscure: true
-            ),
+    child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/et.png', width: 150, height: 150,),
+                InputLoginWidget(icon: Icons.person_outline, hint: 'Nome', obscure: false),
+                InputLoginWidget(icon: Icons.email_outlined, hint: 'E-mail', obscure: false),
+                InputLoginWidget(icon: Icons.document_scanner_outlined, hint: 'CPF', obscure: false),
+                InputLoginWidget(icon: Icons.password_outlined, hint: 'Senha', obscure: true),
+                InputLoginWidget(icon: Icons.password_outlined, hint: 'Confirmar senha', obscure: false),
 
             const SizedBox(height: 20,),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFAFAE24),
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: Size(double.infinity, 45),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
-                )
+                ),
               ),
               onPressed: (){
                 Navigator.push(
@@ -57,7 +52,7 @@ class LoginPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => HomePage())
                 );
               }, 
-              child: Text('Acessar',
+              child: Text('Cadastrar',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
@@ -67,14 +62,14 @@ class LoginPage extends StatelessWidget {
             ),
             ),
 
-            const SizedBox(height: 15,),
+            const SizedBox(height: 10,),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(195, 255, 255, 255),
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: Size(double.infinity, 45),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
@@ -82,10 +77,10 @@ class LoginPage extends StatelessWidget {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CadastroPage())
+                  MaterialPageRoute(builder: (context) => LoginPage())
                 );
               }, 
-              child: Text('Cadastrar-se',
+              child: Text('Cancelar',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
@@ -95,7 +90,9 @@ class LoginPage extends StatelessWidget {
             ),
             ),
 
-          ]
+            ],
+            ),
+          ),
         ),
       ),
     );
